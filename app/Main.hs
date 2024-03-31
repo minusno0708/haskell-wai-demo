@@ -1,6 +1,17 @@
-module Main (main) where
+{-# LANGUAGE OverloadedStrings #-}
 
-import Lib
+import Network.Wai
+import Network.Wai.Handler.Warp
+import Network.HTTP.Types
 
 main :: IO ()
-main = someFunc
+main = do
+    let port = 8080
+    putStrLn $ "Listening on port " ++ show port
+    run port app
+
+app :: Application
+app _ respond = respond $ responseLBS
+    status200
+    [("Content-Type", "text/plain")]
+    "Hello, Web!"
