@@ -1,1 +1,1 @@
-HaskellのWebフレームワークWarpを用いてAPIを作成する。
+HaskellのWebフレームワークWarpを用いてToDo APIを作成する。

@@ -1,4 +1,4 @@
-# Changelog for `warp-demo`
+# Changelog for `servant-demo`
 
 All notable changes to this project will be documented in this file.
 
