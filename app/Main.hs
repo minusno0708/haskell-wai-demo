@@ -7,11 +7,27 @@ import Network.HTTP.Types
 main :: IO ()
 main = do
     let port = 8080
-    putStrLn $ "Listening on port " ++ show port
+    putStrLn $ "Listening on http://localhost:" ++ show port
     run port app
 
 app :: Application
-app _ respond = respond $ responseLBS
+app req respond = do
+    case pathInfo req of
+            [] -> indexHandler req respond
+            ["api", "get"] -> getHandler req respond
+            _ -> respond $ responseLBS
+                status404
+                [("Content-Type", "application/json")]
+                "{\"message\":\"Not Found\"}"
+
+indexHandler :: Application
+indexHandler _ respond = respond $ responseLBS
     status200
-    [("Content-Type", "text/plain")]
-    "Hello, Web!"
+    [("Content-Type", "application/json")]
+    "{\"message\":\"Hello, Warp Api\"}"
+
+getHandler :: Application
+getHandler _ respond = respond $ responseLBS
+    status200
+    [("Content-Type", "application/json")]
+    "{\"message\":\"Get Endpoint\"}"
