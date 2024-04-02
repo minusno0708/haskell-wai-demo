@@ -24,6 +24,7 @@ dependencies:
 - wai
 - warp
 - http-types
+- servant-server
 
 ghc-options:
 - -Wall
