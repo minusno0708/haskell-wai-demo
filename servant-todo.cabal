@@ -4,11 +4,11 @@ cabal-version: 2.2
 --
 -- see: https://github.com/sol/hpack
 
-name:           servant-demo
+name:           servant-todo
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/servant-demo#readme>
-homepage:       https://github.com/githubuser/servant-demo#readme
-bug-reports:    https://github.com/githubuser/servant-demo/issues
+description:    Please see the README on GitHub at <https://github.com/githubuser/servant-todo#readme>
+homepage:       https://github.com/githubuser/servant-todo#readme
+bug-reports:    https://github.com/githubuser/servant-todo/issues
 author:         Author name here
 maintainer:     example@example.com
 copyright:      2024 Author name here
@@ -20,15 +20,15 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/servant-demo
+  location: https://github.com/githubuser/servant-todo
 
 library
   exposed-modules:
       Lib
   other-modules:
-      Paths_servant_demo
+      Paths_servant_todo
   autogen-modules:
-      Paths_servant_demo
+      Paths_servant_todo
   hs-source-dirs:
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
@@ -40,39 +40,39 @@ library
     , warp
   default-language: Haskell2010
 
-executable servant-demo-exe
+executable servant-todo-exe
   main-is: Main.hs
   other-modules:
-      Paths_servant_demo
+      Paths_servant_todo
   autogen-modules:
-      Paths_servant_demo
+      Paths_servant_todo
   hs-source-dirs:
       app
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
     , http-types
-    , servant-demo
     , servant-server
+    , servant-todo
     , wai
     , warp
   default-language: Haskell2010
 
-test-suite servant-demo-test
+test-suite servant-todo-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Paths_servant_demo
+      Paths_servant_todo
   autogen-modules:
-      Paths_servant_demo
+      Paths_servant_todo
   hs-source-dirs:
       test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
     , http-types
-    , servant-demo
     , servant-server
+    , servant-todo
     , wai
     , warp
   default-language: Haskell2010

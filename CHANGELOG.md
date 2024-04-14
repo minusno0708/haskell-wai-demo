@@ -1,4 +1,4 @@
-# Changelog for `servant-demo`
+# Changelog for `servant-todo`
 
 All notable changes to this project will be documented in this file.
 
